@@ -1,6 +1,6 @@
 # Instalación de tensor flow en python
 
-Pasos previos: tener linux 64 bits y con python 2.7
+Pasos previos: tener linux 64 bits con python 2.7
 
 
 1.Instalamos el pip
