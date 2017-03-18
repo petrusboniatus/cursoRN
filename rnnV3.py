@@ -45,7 +45,7 @@ def modelo(image_batch, label_batch, image_test,label_test, dropout):
 
     y_ = label_batch
 
-    # capa de circunvalación y bias
+    # capa de circunvalacion y bias
     W_conv1 = weight_variable([5, 5, 1, 32])
     b_conv1 = bias_variable([32])
 
@@ -54,7 +54,7 @@ def modelo(image_batch, label_batch, image_test,label_test, dropout):
     h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
     h_pool1 = max_pool_2x2(h_conv1)
 
-    # Realizamos  la segunda de capa circunvalación y sus operaciones
+    # Realizamos  la segunda de capa circunvalacion y sus operaciones
     W_conv2 = weight_variable([5, 5, 32, 64])
     b_conv2 = bias_variable([64])
 
@@ -68,16 +68,16 @@ def modelo(image_batch, label_batch, image_test,label_test, dropout):
     h_pool2_flat = tf.reshape(h_pool2, [-1, 7 * 7 * 64])
     h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
 
-    # Dropout, consultar
+    # Dropout
     h_fc1_drop = tf.nn.dropout(h_fc1, dropout)
 
-    # añadimos la ultima capa
+    # anhadimos la ultima capa
     W_fc2 = weight_variable([1024, 4])
     b_fc2 = bias_variable([4])
 
     y_conv = tf.matmul(h_fc1_drop, W_fc2) + b_fc2
 
-    cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(y_conv, y_))
+    cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=y_conv,labels=y_))
     train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 
     #construimos el test
