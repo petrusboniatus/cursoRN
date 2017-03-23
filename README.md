@@ -8,7 +8,7 @@ Ejemplo de proyecto donde se clasifican fragmentos de imágenes pdf según si ti
 
 ### Instalación
 
-1. Si estás en Windows, inicia Linux; por favor.
+1. Si estás en Windows, inicia Linux; Linus Torvalds está triste :(
 2. Instala los paquetes necesarios: 
 ```sudo apt-get install python-pip python-dev```
 3. Instalalo utilizando pip directamente: 
