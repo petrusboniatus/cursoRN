@@ -49,7 +49,7 @@ def multilayer_perceptron(entrada, TamanhoEntrada,anchura,TamanhoSalida,profundi
             M1xM2 = M3
 
             Numero de filas M3 = Numero filas M1
-            Numero de columnas M3 = Numero filas M2
+            Numero de columnas M3 = Numero columnas M2
 
         '''
 
